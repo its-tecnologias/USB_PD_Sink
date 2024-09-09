@@ -1,31 +1,26 @@
 # USB_PD_Sink
 
-### USB C all the things!.
+USB C todas as coisas!.
+Com essa quebra do STUSB4500, você pode alimentar todos os seus dispositivos e projetos eletrônicos. De Arduinos a laptops, o USB-C Power Delivery pode fornecer até 100W (20V @ 5A).
 
-With this breakout of the STUSB4500, you can power all of your devices and electronics projects. From Arduinos to Laptops, USB-C Power Delivery can provide up to **100W (20V @ 5A).**
+Agora você pode comprar isso no meu Tindie!
 
-You can now purchase this from my [Tindie!](https://www.tindie.com/products/ketszim/usb-c-pd-sink-stusb4500/)
+Este dispositivo pode armazenar 3 PDOs (Power Delivery Outputs) e, após a conexão, tentará negociar a mais alta dessas 3. Isso significa que ele pode operar como um dispositivo autônomo, sem a necessidade de um microcontrolador externo. A DOP negociada é mostrada pelas seguintes cores. Por padrão, o dispositivo tem os seguintes PDOs:
 
-This device can store 3 PDOs (Power Delivery Outputs), and upon connection it will attempt to negotiate the highest of these 3. This means that it can operate as a standalone device, without the need for an external microcontroller. The PDO negotiated is shown by the following colors. By default, the device has the following PDOs:
+PDO1	DOP2	DOP3
+5V @ 1.5A	15V @ 1.5A	20V @ 1A
+Azul	Verde	Vermelho
+Os PDOs também podem ser personalizados programando os registros de memória não volátil (NVM) via I2C. O dispositivo também pode ser conectado a um microcontrolador, para permitir a negociação em tempo real do contrato de PD. Para fazer isso, o dispositivo só precisa ser conectado via I2C de acordo com a pinagem abaixo. As bibliotecas para Arduino existem e são rápidas e fáceis de usar.
 
-|PDO1|PDO2|PDO3|
-|:-----:|:-----:|:-----:|
-|5V @ 1.5A|15V @ 1.5A|20V @ 1A|
-|Blue|Green|Red|
+Especificações técnicas
+Controlador: STUSB4500
+Tensão de saída: 5-20V *
+Corrente de saída: 0-5A*
+LED: LED embutido para exibir qual DOP é negociado (veja acima os detalhes)
+Proteção: ESD e proteção transitória nos pinos de alimentação e USB-C, descarga do caminho VBUS na mudança de tensão ou desconexão capaz
+Projetado e fabricado no Canadá
 
-The PDOs can also be customized by programming the Non-Volatile Memory (NVM) registers via I2C.
-The device can also be connected to a microcontroller, to allow on the fly negotiation of the PD contract. To do this the device just needs to be connected via I2C according to the pinout below. Libraries for Arduino exist and are quick and easy to use.
-
-#### Technical Specs
-- Controller: STUSB4500
-- Output Voltage: 5-20V*
-- Output Current: 0-5A*
-- LED: Built in LED to display which PDO is negotiated (See above for specifics)
-- Protection: ESD and Transient Protection on both Power and USB-C Pins, Discharge of VBUS path on voltage change or capable detach
-
-Designed and manufactured in Canada
-
-*\*Output power is limited by the capability of your charger*
+*A potência de saída é limitada pela capacidade do seu carregador
 
 <a href="https://www.tindie.com/stores/ketszim/?ref=offsite_badges&utm_source=sellers_ketszim&utm_medium=badges&utm_campaign=badge_large"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
 
